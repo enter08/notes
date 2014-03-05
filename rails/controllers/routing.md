@@ -416,12 +416,14 @@ Prepoznaje putanje kao <code>/comments/new/preview</code> sa GET.
 
 # 3 Non-Resourceful rute
 
+
 Pored resource rutiranja, Rails nudi odličnu podršku za rutiranje proizvoljnih URL adresa na akcije. Ovdje se svaka ruta u aplikaciji posebno podešava.
 
 Iako se preporučuje resourceful rutiranje, postoji mnogo mjesta gdje je prikladnije koristiti obično rutiranje.
 
 
 ## 3.1 Bound parametri
+
 
 Kada se obična putanja podešava, predaje se niz simbola koje Rails mapira na djelova dolaznog HTTP zahtjeva. Dva od ovih simbola su posebna: <code>:controller</code> mapira ime kontrolera u aplikaciji i <code>:action</code> mapira ime akcije unutar kontrolera. Na primjer:
 
