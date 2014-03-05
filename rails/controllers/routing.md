@@ -283,8 +283,8 @@ Sljedeće rute će biti generisane:
 |GET|/posts/:post_id/comments(.:format)|post_comments|
 |POST|/posts/:post_id/comments(.:format)|post_comments|
 |GET|/posts/:post_id/comments/new(.:format)|new_post_comment|
-|GET|/secret/comments/:id(.:format)|edit_comment|
-|GET|/secret/comments/:id/edit(.:format)|comment|
+|GET|/secret/comments/:id(.:format)|comment|
+|GET|/secret/comments/:id/edit(.:format)|edit_comment|
 |PATCH/PUT|/secret/comments/:id(.:format)|comment|
 |DELETE|/secret/comments/:id(.:format)|comment|
 
@@ -302,8 +302,8 @@ end</code></pre>
 |GET|/posts/:post_id/comments(.:format)|post_comments|
 |POST|/posts/:post_id/comments(.:format)|post_comments|
 |GET|/posts/:post_id/comments/new(.:format)|new_post_comment|
-|GET|/comments/:id(.:format)|edit_secret_comment|
-|GET|/comments/:id/edit(.:format)|secret_comment|
+|GET|/comments/:id(.:format)|secret_comment|
+|GET|/comments/:id/edit(.:format)|edit_secret_comment|
 |PATCH/PUT|/comments/:id(.:format)|secret_comment|
 |DELETE|/comments/:id(.:format)|secret_comment|
 
