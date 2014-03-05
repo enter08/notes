@@ -732,7 +732,7 @@ Takođe je moguće ograničiti štampanje spiska svih postojećih ruta na određ
 
 <pre><code>$ CONTROLLER=users rake routes</code></pre>
 
-## 5.1 Testiranje ruta
+## 5.2 Testiranje ruta
 
 Rails nudi tri ugrađene metode potvrde (assertions) koje olakšavaju testiranje ruta:
 
@@ -740,14 +740,14 @@ Rails nudi tri ugrađene metode potvrde (assertions) koje olakšavaju testiranje
 * <code>assert_recognizes</code>
 * <code>assert_routing</code>
 
-### 5.1.1 assert_generates
+### 5.2.1 assert_generates
 
 <code>assert_generates</code> potvrđuje da određen skup opcija generiše određenu putanju i da se može koristiti sa default rutom ili nekom predefinisanom rutom:
 
 <pre><code>assert_generates '/photos/1', { controller: 'photos', action: 'show', id: '1' }
 assert_generates '/about', controller: 'pages', action: 'about'</code></pre>
 
-### 5.1.2 assert_recognizes
+### 5.2.2 assert_recognizes
 
 <code>assert_recognizes</code> je suprotna <code>assert_generates</code>. Potvrđuje da je određena putanja prepoznata i da rutira na određeno mjesto u aplikaciji. 
 
@@ -757,7 +757,7 @@ Argument <code>:method</code> se može koristiti da se odredi HTTP metod:
 
 <pre><code>assert_recognizes({ controller: 'photos', action: 'create' }, { path: 'photos', method: :post })</code></pre>
 
-### 5.1.3 assert_routing
+### 5.2.3 assert_routing
 
 <code>assert_routing</code> provjerava rutu u oba pravca: testira da li putanja generiše opcije i da li opcije generišu putanju.
 
