@@ -74,7 +74,7 @@ Piped log rotation možemo koristiti i kada logovi dostignu određenu veličinu 
 
 ## Logovi Rails aplikacije
 
-Rails aplikacije mogu kreirati veću količinu log podataka, tako da će i ovdje biti potrebno naći način za upravljanje log fajlovima. Rails logrotate skripta ne dolazi ni sa jednim standardnim Linux paketima, tako da ćemo pokretati našu skriptu i staviti je na odgovarajuće mjesto, koristeći Puppet.
+Rails aplikacije mogu kreirati veću količinu log podataka, tako da će i ovdje biti potrebno naći način za upravljanje log fajlovima. Rails logrotate skripta ne dolazi ni sa jednim standardnim Linux paketom, tako da ćemo pokretati našu skriptu i staviti je na odgovarajuće mjesto, koristeći Puppet.
 
 Rotaciona skripta naše aplikacije će biti slična podrazumijevanoj skripti Apache-a, sa sljedećim razlikama:
 
@@ -146,3 +146,4 @@ Najkraći ugrađeni vremenski interval koji logrotate omogućava je ***daily***,
 		}
 	}
 
+Sada pokretanjem Puppeta postavljamo sve na svoje mjesto, cron job-om ćemo osigurati da logovi aplikaciju imaju razumnu veličinu, a kao bonus, sada imamo framework za lako skraćivanje vremenskog intervala log rotacija ako nam je to potrebno.
