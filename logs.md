@@ -1,7 +1,7 @@
 # Upravljanje logovima
 
 Cilj je prepoznati sva mjesta gdje naša aplikacija kreira podatke ili gdje neki korisnik kreira podatke u aplikaciji. Zatim su nam potrebne određene komponente koje će spriječiti da ta mjesta beskonačno rastu. Tip tih komponenti, podrazumijeva se, nije isti. Dakle, potrebna nam je strategija za upravljanje izvora brzog rasta podataka. Nekada, ostaviti ih da rastu je ispravna stvar, kao na primjer, tabela zemalja svijeta. Ali, reći da ta tabela nikada neće biti prazna je, na primjer, dobar korak. 
-Od velikog značaja su logovi aplikacije i web servera. Ako se njima dobro ne upravlja, mogu zauzeti veliki prostor disku. 
+Od velikog značaja su logovi aplikacije i web servera. Ako se njima dobro ne upravlja, mogu zauzeti veliki prostor na disku. 
 
 ## Apache logovi
 
@@ -67,7 +67,7 @@ U jednom Puppet file-u podesimo apache2.conf fajl i izbrišimo logrotate.d skrip
 		# other resources
 	}
 
-Pokretanjem Puppeta primijenićemo izmjeno. Sada se u /var/log/apache2 nalazi novi log fajl sa timestamp-om sa imenovan kao other_vhosts_access.log.1304985600, na primjer. 
+Pokretanjem Puppeta primijenićemo izmjene. Sada se u /var/log/apache2 nalazi novi log fajl sa timestamp-om koji je imenovan kao other_vhosts_access.log.1304985600, na primjer.
 
 Piped log rotation možemo koristiti i kada logovi dostignu određenu veličinu i da promijenimo format imena log fajla. Detaljnije na Apache [vebsajtu](http://httpd.apache.org/docs/2.2/programs/rotatelogs.html
 ).
