@@ -228,6 +228,8 @@ Primjeri:
 	  rake "app_server:task"
 	end
 
+Cron syntax: http://www.nncron.ru/help/EN/working/cron-format.htm
+
 Lista svih opcija se može vidjeti pomoću:
 
     $ whenever --help
@@ -247,7 +249,7 @@ U config/schedule.rb:
 		command "cd ~/rails_projects/expman && backup perform --trigger expense_manager"
 	end
 
-Na kraju, pokrećemo cron job da radi svaki minut:
+Na kraju u Backup folderu, pokrećemo cron job da radi svaki minut:
 
     $ whenever
     $ whenever --update-crontab
