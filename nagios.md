@@ -388,8 +388,8 @@ nrpe.cfg:
 
 Download:
 
-*[link1](https://github.com/scalp42/check_unicorn/blob/master/check_unicorn)
-*[link2](https://github.com/scalp42/check_unicorn/blob/master/check_unicorn_processes)
+* [link1](https://github.com/scalp42/check_unicorn/blob/master/check_unicorn)
+* [link2](https://github.com/scalp42/check_unicorn/blob/master/check_unicorn_processes)
 
 nrpe.conf
 	
