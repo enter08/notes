@@ -587,8 +587,8 @@ server.cfg:
 
 nrpe.cfg:
 
-command[check_load_nrpe]=/usr/lib/nagios/plugins/check_load -w 5.0,4.0,3.0 -c 10.0,6.0,4.0
-command[check_procs_nrpe]=/usr/lib/nagios/plugins/check_procs -w 10 -c 20 --metric CPU
-command[check_http_nrpe]=/usr/lib/nagios/plugins/check_http -H IP
-command[check_ssh_nrpe]=/usr/lib/nagios/plugins/check_ssh IP
-command[check_ping_nrpe]=/usr/lib/nagios/plugins/check_ping -H IP -w 100.0,20% -c 500.0,60%
+	command[check_load_nrpe]=/usr/lib/nagios/plugins/check_load -w 5.0,4.0,3.0 -c 10.0,6.0,4.0
+	command[check_procs_nrpe]=/usr/lib/nagios/plugins/check_procs -w 10 -c 20 --metric CPU
+	command[check_http_nrpe]=/usr/lib/nagios/plugins/check_http -H IP
+	command[check_ssh_nrpe]=/usr/lib/nagios/plugins/check_ssh IP
+	command[check_ping_nrpe]=/usr/lib/nagios/plugins/check_ping -H IP -w 100.0,20% -c 500.0,60%
