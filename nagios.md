@@ -479,23 +479,24 @@ Download:
 http://bucardo.org/wiki/Check_postgres
 
 **Connection**
-command[check_pg_connection]=/usr/lib/nagios/plugins/check_postgres.pl --action=connection --dbuser=expman --db=expman_production --dbpass=secret --host=localhost
+
+	command[check_pg_connection]=/usr/lib/nagios/plugins/check_postgres.pl --action=connection --dbuser=expman --db=expman_production --dbpass=secret --host=localhost
 
 **Bloat**
 Checks the amount of bloat in tables and indexes. (Bloat is generally the amount of dead unused space taken up in a table or index. This space is usually reclaimed by use of the VACUUM command.)
 
-command[check_bloat]=/usr/lib/nagios/plugins/check_postgres.pl --action=bloat --dbuser=expman --db=expman_production --dbpass=secret --host=localhost --warning='100 M' --critical='200 M'
+	command[check_bloat]=/usr/lib/nagios/plugins/check_postgres.pl --action=bloat --dbuser=expman --db=expman_production --dbpass=secret --host=localhost --warning='100 M' --critical='200 M'
 
 **Backends**
 
 Checks the current number of connections for one or more databases, and optionally compares it to the maximum allowed, which is determined by the Postgres configuration variable max_connections.
 
-command[check_backends]=/usr/lib/nagios/plugins/check_postgres.pl --action=backends --dbuser=expman --db=expman_production --dbpass=secret --host=localhost --warning='150' --critical='150'
+	command[check_backends]=/usr/lib/nagios/plugins/check_postgres.pl --action=backends --dbuser=expman --db=expman_production --dbpass=secret --host=localhost --warning='150' --critical='150'
 
 **database_size**
 Checks the size of all databases and complains when they are too big. There is no need to run this command more than once per database cluster.
 
-command[check_db_size]=/usr/lib/nagios/plugins/check_postgres.pl --action=database_size --dbuser=expman --db=expman_production --dbpass=secret --host=localhost --warning='450 GB' --critical='500 GB'
+	command[check_db_size]=/usr/lib/nagios/plugins/check_postgres.pl --action=database_size --dbuser=expman --db=expman_production --dbpass=secret --host=localhost --warning='450 GB' --critical='500 GB'
 
 **disk_space**
 Checks on the available physical disk space used by Postgres. This action requires that you have the executable "/bin/df" available to report on disk sizes, and it also needs to be run as a superuser, so it can examine the data_directory setting inside of Postgres.
@@ -505,7 +506,7 @@ Checks on the available physical disk space used by Postgres. This action requir
 **query_time**
 Checks the length of running queries on one or more databases.
 
-command[check_query_time]=/usr/lib/nagios/plugins/check_postgres.pl --action=query_time --dbuser=expman --db=expman_production --dbpass=secret --host=localhost --warning=20s --critical=40s --port=5432
+	command[check_query_time]=/usr/lib/nagios/plugins/check_postgres.pl --action=query_time --dbuser=expman --db=expman_production --dbpass=secret --host=localhost --warning=20s --critical=40s --port=5432
 
 ###Default plugins
 
