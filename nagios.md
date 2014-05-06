@@ -593,3 +593,97 @@ nrpe.cfg:
 	command[check_http_nrpe]=/usr/lib/nagios/plugins/check_http -H IP
 	command[check_ssh_nrpe]=/usr/lib/nagios/plugins/check_ssh IP
 	command[check_ping_nrpe]=/usr/lib/nagios/plugins/check_ping -H IP -w 100.0,20% -c 500.0,60%
+
+## Notifikacije
+
+Definisanje generic-contact:
+
+**templates.cfg**
+
+	define contact{
+        name                            generic-contact
+        service_notification_period     24x7
+        host_notification_period        24x7
+        service_notification_options    w,u,c,r,f,s
+        host_notification_options       d,u,r,f,s
+        service_notification_commands   notify-service-by-email
+        host_notification_commands      notify-host-by-email
+        register                        0
+	}
+
+**contacts.cfg**
+
+	define contact{
+	        contact_name                    sgupta
+	        use                             generic-contact
+	        alias                           Sanjay Gupta (Developer)
+	        email                           sgupta@thegeekstuff.com
+	        pager                           333-333@pager.thegeekstuff.com
+	        }
+	define contact{
+	        contact_name                    jbourne
+	        use                             generic-contact
+	        alias                           Jason Bourne (Sysadmin)
+	        email                           jbourne@thegeekstuff.com
+	        }
+
+	define contactgroup{
+	contactgroup_name          db-admins
+	alias                      Database Administrators
+	members                    jsmith, jdoe, mraj
+	}
+
+	define contactgroup{
+	contactgroup_name          unix-admins
+	alias                      Linux System Administrator
+	members                    jbourne, dpatel, mshankar
+	}
+
+**localhost.cfg**
+
+	define host{
+	use                     linux-server
+	host_name               email-server
+	alias                   Corporate Email Server
+	address                 192.168.1.14
+	contact_groups          unix-admins
+	}
+
+	define service{
+	use                             generic-service
+	host_name                       prod-db
+	service_description             CPU Load
+	contact_groups                  unix-admins
+	check_command                   check_nrpe!check_load
+	}
+
+http://linuxg.net/how-to-send-emails-via-terminal/
+
+	$ sudo apt-get install msmtp
+	$ sudo apt-get install heirloom-mailx
+
+Kreirajte fajl <code>~/.msmtprc</code>.
+
+host smtp.gmail.com
+
+port 587
+
+protocol smtp
+
+auth on
+
+from Demic Redzep
+
+user demicredzep1990@gmail.com
+
+password yourpassword
+
+tls on
+
+tls_nocertcheck
+
+	$ chmod 600 .msmtprc
+
+test:
+
+	echo "Hello" | mail contact@linuxg.net
