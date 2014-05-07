@@ -266,6 +266,10 @@ NRPE daemon se vezuje za port 5666. Izmijenimo iptables filter da prihvati konek
 	$ sudo iptables -A INPUT -s 188.226.192.11 -p tcp --dport 5666 -j ACCEPT
 
 Instalirajmo sada NRPE na serveru.
+
+	$ sudo useradd nagios
+	$ sudo groupadd nagcmd
+	$ sudo usermod -a -G nagcmd nagios
 	
 	$ sudo apt-get update
 	$ sudo apt-get install nagios-nrpe-server
