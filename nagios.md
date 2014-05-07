@@ -217,18 +217,18 @@ Nagios Remote Plug-in Executor (NRPE) je Nagios dodatak koji omogućava 'lokalne
 
 Instalacija nrpe plugin-a lokalno (ili na serveru gdje se nalazi Nagios):
 
-	$ mkdir -p /usr/local/src/nrpe
+	$ sudo mkdir -p /usr/local/src/nrpe
 	$ cd /usr/local/src/nrpe
-	$ wget http://kent.dl.sourceforge.net/project/nagios/nrpe-2.x/nrpe-2.15/nrpe-2.15.tar.gz
-	$ tar -xf nrpe-2.15.tar.gz
+	$ sudo wget http://kent.dl.sourceforge.net/project/nagios/nrpe-2.x/nrpe-2.15/nrpe-2.15.tar.gz
+	$ sudo tar -xf nrpe-2.15.tar.gz
 	$ cd nrpe-2.15
-	$ ./configure --with-ssl=/usr/bin/openssl--with-ssl-lib=/usr/lib/x86_64-linux-gnu
+	$ sudo ./configure --with-ssl=/usr/bin/openssl--with-ssl-lib=/usr/lib/x86_64-linux-gnu
 
 Ako naiđete na grešku **configure: error: Cannot find ssl libraries** instalirajte sljedeće:
 
 	$ sudo apt-get install libssl-dev
 	$ dpkg -L libssl-dev
-	$ ln -s /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/libssl.so
+	$ sudo ln -s /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/libssl.so
 
 Sada pokušajte <code>configure</code> komandu.
 
