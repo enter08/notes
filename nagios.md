@@ -240,9 +240,7 @@ NRPE pokrećemo uz pomoć xinetd:
 
 	$ sudo make all
 
-Ako ne postoji <code>make</code>:
-
-	$ sudo apt-get install make 
+	$ sudo apt-get install make (ako ne postoji make)
 
 	$ sudo make install
 	$ sudo make install-daemon
