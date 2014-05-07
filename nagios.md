@@ -373,7 +373,7 @@ Install elasticsearch gem.
 
 nrpe.cfg:
 
-	command[check_elasticsearch_cluser]=/usr/lib/nagios/plugins/check_elasticsearch_cluser.rb --ip 107.170.106.199 --port 9200
+	command[check_elasticsearch_cluser]=/usr/lib/nagios/plugins/check_elasticsearch_cluster.rb --ip 107.170.106.199 --port 9200
 
 	$ sudo service nagios-nrpe-server restart
 
@@ -381,7 +381,7 @@ nrpe.cfg:
 	  use generic-service
 	  host_name server
 	  service_description ElasticSearch Cluster Health
-	  check_command check_elasticsearch_cluser_health
+	  check_command check_elasticsearch_cluster_health
 	}
 
 	define command{
@@ -451,9 +451,9 @@ in the app file in sites-enabled (nginx).
 
 Restart nginx and visit IP/nginx_status.
 
-nginx.conf:
+nrpe.cfg:
 
-    command[check_unicorn]=sudo /usr/lib/nagios/plugins/check_nginx_status IP 80 nginx_status
+    command[check_nginx_status]=sudo /usr/lib/nagios/plugins/check_nginx_status.sh IP 80 nginx_status
 
 change /etc/sudoers:
 
@@ -668,6 +668,7 @@ http://linuxg.net/how-to-send-emails-via-terminal/
 
 	$ sudo apt-get install msmtp
 	$ sudo apt-get install heirloom-mailx
+	$ sudo apt-get install sendmail
 
 Kreirajte fajl <code>~/.msmtprc</code>.
 
@@ -689,8 +690,12 @@ tls on
 
 tls_nocertcheck
 
+	$ echo "set sendmail=/usr/bin/msmtp" > ~/.mailrc
+
 	$ chmod 600 .msmtprc
 
 test:
 
-	echo "Hello" | mail contact@linuxg.net
+	$ echo "Hello" | mail contact@linuxg.net
+
+Na osnovu ovoga, promijenite contacts.cfg.
