@@ -250,7 +250,7 @@ NRPE pokrećemo uz pomoć xinetd:
 	$ sudo chown nagios.nagios /usr/local/nagios
 	$ sudo chown -R nagios.nagios /usr/local/nagios/libexec
 
-	/usr/local/nagios/bin/nrpe -c /usr/local/nagios/etc/nrpe.cfg -d
+	$ /usr/local/nagios/bin/nrpe -c /usr/local/nagios/etc/nrpe.cfg -d
 
 	Izmijenimo /etc/xinetd.d/nrpe fajl. U only_from dodajemo IP adresu nagios servera. (samo razmak izmedju IP adresa)
 
